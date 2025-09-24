@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* Official Scouting America Brand Colors */
+  /* Scouts BSA Program Colors */
+  --scouts-bsa-olive: #243E2C;
+  --scouts-bsa-olive-dark: #1a2e1f;
+  --scouts-bsa-olive-light: #4a6854;
+  --scouts-bsa-tan: #D6CEBD;
+  --scouts-bsa-red: #CE1126;
+  --scouts-bsa-50: #f8f7f6;
+  --scouts-bsa-100: #f0ede7;
+  --scouts-bsa-200: #e8e2d5;
+  --scouts-bsa-300: #d6cebd;
+  --scouts-bsa-400: #c4b6a1;
+  --scouts-bsa-500: #b29e85;
+  --scouts-bsa-600: #9d8a6b;
+  --scouts-bsa-700: #7a674f;
+  --scouts-bsa-800: #5c4d39;
+  --scouts-bsa-900: #3d3426;
+
+  /* Cub Scouts Program Colors */
+  --cub-scouts-gold: #FDC116;
+  --cub-scouts-blue: #003F87;
+  --cub-scouts-blue-dark: #002951;
+  --cub-scouts-blue-light: #3366a8;
+  --cub-scouts-50: #fffdf0;
+  --cub-scouts-100: #fffadb;
+  --cub-scouts-200: #fff4b8;
+  --cub-scouts-300: #fdc116;
+  --cub-scouts-400: #e5ad00;
+  --cub-scouts-500: #cc9900;
+  --cub-scouts-600: #b38500;
+  --cub-scouts-700: #996b00;
+  --cub-scouts-800: #805100;
+  --cub-scouts-900: #663700;
+
+  /* Corporate Scouting America Colors */
+  --scouting-red: #CE1126;
+  --scouting-blue: #003F87;
+  --scouting-gray: #53565A;
+  --scouting-tan: #D6CEBD;
+
+  /* Neutral colors for text and backgrounds */
+  --scout-stone-900: #3c3c3c;
+  --scout-stone-800: #525252;
+  --scout-stone-700: #737373;
+  --scout-stone-600: #a3a3a3;
+  --scout-stone-500: #d4d4d4;
+  --scout-stone-400: #e5e5e5;
+  --scout-stone-300: #f5f5f5;
+  --scout-stone-200: #fafafa;
+  --scout-stone-100: #fdfdfd;
+  --scout-stone-50: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Official Scouting America Brand Color Extensions */
+  /* Scouts BSA Colors */
+  --color-scouts-bsa-olive: var(--scouts-bsa-olive);
+  --color-scouts-bsa-olive-dark: var(--scouts-bsa-olive-dark);
+  --color-scouts-bsa-olive-light: var(--scouts-bsa-olive-light);
+  --color-scouts-bsa-tan: var(--scouts-bsa-tan);
+  --color-scouts-bsa-red: var(--scouts-bsa-red);
+  --color-scouts-bsa-50: var(--scouts-bsa-50);
+  --color-scouts-bsa-100: var(--scouts-bsa-100);
+  --color-scouts-bsa-200: var(--scouts-bsa-200);
+  --color-scouts-bsa-300: var(--scouts-bsa-300);
+  --color-scouts-bsa-400: var(--scouts-bsa-400);
+  --color-scouts-bsa-500: var(--scouts-bsa-500);
+  --color-scouts-bsa-600: var(--scouts-bsa-600);
+  --color-scouts-bsa-700: var(--scouts-bsa-700);
+  --color-scouts-bsa-800: var(--scouts-bsa-800);
+  --color-scouts-bsa-900: var(--scouts-bsa-900);
+
+  /* Cub Scouts Colors */
+  --color-cub-scouts-gold: var(--cub-scouts-gold);
+  --color-cub-scouts-blue: var(--cub-scouts-blue);
+  --color-cub-scouts-blue-dark: var(--cub-scouts-blue-dark);
+  --color-cub-scouts-blue-light: var(--cub-scouts-blue-light);
+  --color-cub-scouts-50: var(--cub-scouts-50);
+  --color-cub-scouts-100: var(--cub-scouts-100);
+  --color-cub-scouts-200: var(--cub-scouts-200);
+  --color-cub-scouts-300: var(--cub-scouts-300);
+  --color-cub-scouts-400: var(--cub-scouts-400);
+  --color-cub-scouts-500: var(--cub-scouts-500);
+  --color-cub-scouts-600: var(--cub-scouts-600);
+  --color-cub-scouts-700: var(--cub-scouts-700);
+  --color-cub-scouts-800: var(--cub-scouts-800);
+  --color-cub-scouts-900: var(--cub-scouts-900);
+
+  /* Corporate Scouting America Colors */
+  --color-scouting-red: var(--scouting-red);
+  --color-scouting-blue: var(--scouting-blue);
+  --color-scouting-gray: var(--scouting-gray);
+  --color-scouting-tan: var(--scouting-tan);
+
+  /* Neutral colors */
+  --color-scout-stone-50: var(--scout-stone-50);
+  --color-scout-stone-100: var(--scout-stone-100);
+  --color-scout-stone-200: var(--scout-stone-200);
+  --color-scout-stone-300: var(--scout-stone-300);
+  --color-scout-stone-400: var(--scout-stone-400);
+  --color-scout-stone-500: var(--scout-stone-500);
+  --color-scout-stone-600: var(--scout-stone-600);
+  --color-scout-stone-700: var(--scout-stone-700);
+  --color-scout-stone-800: var(--scout-stone-800);
+  --color-scout-stone-900: var(--scout-stone-900);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}

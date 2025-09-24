@@ -1,0 +1,19 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Compass background circle -->
+  <circle cx="16" cy="16" r="15" fill="#047857" stroke="#065f46" stroke-width="2"/>
+
+  <!-- Compass rose -->
+  <g transform="translate(16,16)">
+    <!-- North arrow (red) -->
+    <path d="M 0,-10 L -3,-5 L 0,-2 L 3,-5 Z" fill="#dc2626"/>
+    <!-- South arrow (white) -->
+    <path d="M 0,10 L -3,5 L 0,2 L 3,5 Z" fill="#ffffff"/>
+    <!-- East arrow (white) -->
+    <path d="M 10,0 L 5,-3 L 2,0 L 5,3 Z" fill="#ffffff"/>
+    <!-- West arrow (white) -->
+    <path d="M -10,0 L -5,-3 L -2,0 L -5,3 Z" fill="#ffffff"/>
+  </g>
+
+  <!-- Center circle -->
+  <circle cx="16" cy="16" r="2" fill="#ffffff"/>
+</svg>

@@ -1,0 +1,55 @@
+[build]
+  publish = ".next"
+  command = "npm run build"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Form handling for lead capture
+[build.processing]
+  skip_processing = false
+
+# Headers for security and performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Scout-specific redirects for SEO
+[[redirects]]
+  from = "/cub-scouts"
+  to = "/programs/cub-scouts"
+  status = 301
+
+[[redirects]]
+  from = "/scouts-bsa"
+  to = "/programs/scouts-bsa"
+  status = 301
+
+[[redirects]]
+  from = "/troops"
+  to = "/find-your-troop"
+  status = 301
+
+[[redirects]]
+  from = "/safety"
+  to = "/safety-first"
+  status = 301
+
+[[redirects]]
+  from = "/join"
+  to = "/join-now"
+  status = 301
