@@ -245,34 +245,37 @@ export default function Activities() {
                 src="/powhatan.jpg"
                 alt="Blue Ridge Scout Reservation - Beautiful mountain landscape view"
                 fill
-                className="object-cover opacity-25"
+                className="object-cover opacity-20"
                 priority
               />
             </div>
 
+            {/* Dark overlay for better text contrast */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/20"></div>
+
             <div className="relative z-10 p-8 md:p-12">
               <div className="max-w-4xl mx-auto">
-                <h3 className="text-3xl md:text-4xl font-bold mb-4 text-center">
+                <h3 className="text-3xl md:text-4xl font-bold mb-4 text-center drop-shadow-lg">
                   Blue Ridge Scout Reservation
                 </h3>
-                <p className="text-xl text-center mb-8">
+                <p className="text-xl text-center mb-8 drop-shadow-md">
                   Virginia&apos;s Blue Ridge Mountains • 16,000 Acres • World-Class Programs
                 </p>
                 <div className="grid md:grid-cols-3 gap-6 mb-8">
-                  <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4 text-center">
+                  <div className="bg-black bg-opacity-40 backdrop-blur-sm rounded-lg p-4 text-center border border-white/20">
                     <Icon name="mountain" className="text-white mb-2" size="lg" />
-                    <p className="font-semibold">Untamed Wilderness</p>
-                    <p className="text-sm mt-1">Real mountains, forests, and trails</p>
+                    <p className="font-semibold drop-shadow-md">Untamed Wilderness</p>
+                    <p className="text-sm mt-1 drop-shadow-md">Real mountains, forests, and trails</p>
                   </div>
-                  <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4 text-center">
+                  <div className="bg-black bg-opacity-40 backdrop-blur-sm rounded-lg p-4 text-center border border-white/20">
                     <Icon name="swimming" className="text-white mb-2" size="lg" />
-                    <p className="font-semibold">Claytor Lake</p>
-                    <p className="text-sm mt-1">Swimming, boating, and waterfront</p>
+                    <p className="font-semibold drop-shadow-md">Claytor Lake</p>
+                    <p className="text-sm mt-1 drop-shadow-md">Swimming, boating, and waterfront</p>
                   </div>
-                  <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4 text-center">
+                  <div className="bg-black bg-opacity-40 backdrop-blur-sm rounded-lg p-4 text-center border border-white/20">
                     <Icon name="tent" className="text-white mb-2" size="lg" />
-                    <p className="font-semibold">Five Unique Camps</p>
-                    <p className="text-sm mt-1">From traditional to high adventure</p>
+                    <p className="font-semibold drop-shadow-md">Five Unique Camps</p>
+                    <p className="text-sm mt-1 drop-shadow-md">From traditional to high adventure</p>
                   </div>
                 </div>
                 <div className="text-center">
@@ -280,7 +283,7 @@ export default function Activities() {
                     href="https://brmcreservation.org/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white text-emerald-600 px-8 py-3 rounded-lg hover:bg-emerald-50 transition-colors font-semibold inline-block shadow-lg"
+                    className="bg-white text-emerald-600 px-8 py-3 rounded-lg hover:bg-emerald-50 transition-colors font-semibold inline-block shadow-xl"
                   >
                     Explore BRSR Programs
                   </a>
