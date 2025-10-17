@@ -123,8 +123,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Local Connection */}
-      <section className="py-16 px-4 bg-gray-50">
+      {/* Local Connection - TEMPORARILY HIDDEN until real troop data is available */}
+      {/* <section className="py-16 px-4 bg-gray-50">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
             Serving Troops Throughout the Great Valley
@@ -172,7 +172,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Trust Building */}
       <section className="py-16 px-4 bg-white">

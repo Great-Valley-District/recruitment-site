@@ -50,27 +50,28 @@ export default function JoinNow() {
     return 'Please contact us for program options';
   };
 
-  const getTroopRecommendation = () => {
-    // Simple ZIP code routing logic (in real implementation, this would use a proper mapping service)
-    const zip = formData.zipCode;
-    if (zip.startsWith('240') || zip.startsWith('241')) {
-      return {
-        name: 'Troop 123 - Downtown',
-        location: 'Downtown Community Center, 123 Main Street',
-        meeting: 'Thursdays, 7:00 PM - 8:30 PM',
-        contact: 'troop123@greatvalleydistrict.org',
-        phone: '(540) 555-0123'
-      };
-    } else {
-      return {
-        name: 'Troop 456 - Westside',
-        location: 'Westside Elementary School, 456 Oak Avenue',
-        meeting: 'Tuesdays, 6:30 PM - 8:00 PM',
-        contact: 'troop456@greatvalleydistrict.org',
-        phone: '(540) 555-0456'
-      };
-    }
-  };
+  // TEMPORARILY DISABLED - Will be re-enabled when real troop data is available
+  // const getTroopRecommendation = () => {
+  //   // Simple ZIP code routing logic (in real implementation, this would use a proper mapping service)
+  //   const zip = formData.zipCode;
+  //   if (zip.startsWith('240') || zip.startsWith('241')) {
+  //     return {
+  //       name: 'Troop 123 - Downtown',
+  //       location: 'Downtown Community Center, 123 Main Street',
+  //       meeting: 'Thursdays, 7:00 PM - 8:30 PM',
+  //       contact: 'troop123@greatvalleydistrict.org',
+  //       phone: '(540) 555-0123'
+  //     };
+  //   } else {
+  //     return {
+  //       name: 'Troop 456 - Westside',
+  //       location: 'Westside Elementary School, 456 Oak Avenue',
+  //       meeting: 'Tuesdays, 6:30 PM - 8:00 PM',
+  //       contact: 'troop456@greatvalleydistrict.org',
+  //       phone: '(540) 555-0456'
+  //     };
+  //   }
+  // };
 
   return (
     <div className={`min-h-screen bg-gradient-to-b ${gradients.page}`}>
@@ -269,17 +270,18 @@ export default function JoinNow() {
           {step === 3 && (
             <div className="bg-white rounded-lg shadow-lg p-8">
               <h2 className="text-2xl font-bold text-center mb-4 text-green-800">
-                Additional Information
+                Optional Information
               </h2>
               <p className="text-center text-gray-600 mb-6 text-sm">
-                This information is optional but helps us find the best troop match for your family
+                This information helps us find the best troop match for your family
               </p>
 
               <form
                 name="scout-application"
                 method="POST"
+                action="/thank-you.html"
                 data-netlify="true"
-                netlify-honeypot="bot-field"
+                data-netlify-honeypot="bot-field"
                 className="space-y-6"
               >
                 {/* Hidden fields for Netlify form */}
@@ -296,12 +298,13 @@ export default function JoinNow() {
                 <input type="hidden" name="childAge" value={formData.childAge} />
                 <input type="hidden" name="zipCode" value={formData.zipCode} />
                 <input type="hidden" name="recommendedProgram" value={getProgram()} />
-                <input type="hidden" name="assignedTroop" value={getTroopRecommendation().name} />
+                {/* Troop assignment temporarily disabled until real troop data is available */}
+                {/* <input type="hidden" name="assignedTroop" value={getTroopRecommendation().name} /> */}
                 <input type="hidden" name="meetingAvailability" value={formData.meetingAvailability.join(', ')} />
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-3">
-                    Meeting Availability (Optional)
+                    Meeting Availability
                   </label>
                   <p className="text-xs text-gray-500 mb-3">Select all days that work for your family</p>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -328,7 +331,7 @@ export default function JoinNow() {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    How did you hear about Scouting? (Optional)
+                    How did you hear about Scouting?
                   </label>
                   <select
                     name="hearAbout"
@@ -348,10 +351,10 @@ export default function JoinNow() {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    (Optional)
+                    Additional Comments or Questions
                   </label>
                   <textarea
-                    name="comments"
+                    name="specialNeeds"
                     value={formData.specialNeeds}
                     onChange={handleInputChange}
                     rows={3}
