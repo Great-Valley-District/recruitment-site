@@ -216,7 +216,7 @@ export const semanticColors = {
   nav: {
     bg: 'white',
     border: colors.neutral[200],
-    text: colors.neutral[700],
+    text: colors.neutral[900], // Darker for better contrast on iPad/mobile
     textHover: colors.scoutsBsa.olive,
     textActive: colors.scoutsBsa.olive,
     bgActive: colors.scoutsBsa[50],

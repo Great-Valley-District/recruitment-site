@@ -14,7 +14,7 @@ export default function JoinNow() {
     childName: '',
     childAge: '',
     zipCode: '',
-    meetingPreferences: '',
+    meetingAvailability: [] as string[],
     hearAbout: '',
     specialNeeds: ''
   });
@@ -34,6 +34,15 @@ export default function JoinNow() {
     });
   };
 
+  const handleDayToggle = (day: string) => {
+    setFormData(prev => ({
+      ...prev,
+      meetingAvailability: prev.meetingAvailability.includes(day)
+        ? prev.meetingAvailability.filter(d => d !== day)
+        : [...prev.meetingAvailability, day]
+    }));
+  };
+
   const getProgram = () => {
     const age = parseInt(formData.childAge);
     if (age >= 5 && age <= 10) return 'Cub Scouts';
@@ -49,7 +58,7 @@ export default function JoinNow() {
         name: 'Troop 123 - Downtown',
         location: 'Downtown Community Center, 123 Main Street',
         meeting: 'Thursdays, 7:00 PM - 8:30 PM',
-        contact: 'troop123@roanokevalleyscouts.org',
+        contact: 'troop123@greatvalleydistrict.org',
         phone: '(540) 555-0123'
       };
     } else {
@@ -57,7 +66,7 @@ export default function JoinNow() {
         name: 'Troop 456 - Westside',
         location: 'Westside Elementary School, 456 Oak Avenue',
         meeting: 'Tuesdays, 6:30 PM - 8:00 PM',
-        contact: 'troop456@roanokevalleyscouts.org',
+        contact: 'troop456@greatvalleydistrict.org',
         phone: '(540) 555-0456'
       };
     }
@@ -95,7 +104,7 @@ export default function JoinNow() {
               <form className="space-y-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address *
+                    Email Address
                   </label>
                   <input
                     type="email"
@@ -104,7 +113,6 @@ export default function JoinNow() {
                     onChange={handleInputChange}
                     className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     placeholder="your.email@example.com"
-                    required
                   />
                 </div>
 
@@ -122,6 +130,14 @@ export default function JoinNow() {
                   />
                 </div>
 
+                {!formData.email && !formData.phone && (
+                  <div className="bg-amber-50 border border-amber-200 p-4 rounded-lg">
+                    <p className="text-amber-800 text-sm text-center">
+                      Please provide either an email address or phone number so we can contact you
+                    </p>
+                  </div>
+                )}
+
                 <div className="bg-green-50 p-4 rounded-lg">
                   <p className="text-green-800 font-semibold text-center">
                     Join 1,000+ Great Valley District Scout families
@@ -134,7 +150,7 @@ export default function JoinNow() {
                 <button
                   type="button"
                   onClick={handleNext}
-                  disabled={!formData.email}
+                  disabled={!formData.email && !formData.phone}
                   className="w-full bg-green-700 text-white py-3 px-6 rounded-lg hover:bg-green-800 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
                 >
                   Continue to Step 2
@@ -252,9 +268,12 @@ export default function JoinNow() {
 
           {step === 3 && (
             <div className="bg-white rounded-lg shadow-lg p-8">
-              <h2 className="text-2xl font-bold text-center mb-6 text-green-800">
-                Preferences & Assignment
+              <h2 className="text-2xl font-bold text-center mb-4 text-green-800">
+                Additional Information
               </h2>
+              <p className="text-center text-gray-600 mb-6 text-sm">
+                This information is optional but helps us find the best troop match for your family
+              </p>
 
               <form
                 name="scout-application"
@@ -278,27 +297,38 @@ export default function JoinNow() {
                 <input type="hidden" name="zipCode" value={formData.zipCode} />
                 <input type="hidden" name="recommendedProgram" value={getProgram()} />
                 <input type="hidden" name="assignedTroop" value={getTroopRecommendation().name} />
+                <input type="hidden" name="meetingAvailability" value={formData.meetingAvailability.join(', ')} />
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Meeting Time Preferences
+                  <label className="block text-sm font-medium text-gray-700 mb-3">
+                    Meeting Availability (Optional)
                   </label>
-                  <select
-                    name="meetingPreferences"
-                    value={formData.meetingPreferences}
-                    onChange={handleInputChange}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                  >
-                    <option value="">No preference</option>
-                    <option value="weekday-evening">Weekday evenings</option>
-                    <option value="weekend">Weekends</option>
-                    <option value="flexible">Flexible schedule</option>
-                  </select>
+                  <p className="text-xs text-gray-500 mb-3">Select all days that work for your family</p>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].map(day => (
+                      <label
+                        key={day}
+                        className={`flex items-center justify-center p-3 rounded-lg border-2 cursor-pointer transition-all ${
+                          formData.meetingAvailability.includes(day)
+                            ? 'border-green-600 bg-green-50 text-green-800'
+                            : 'border-gray-300 hover:border-green-400 bg-white'
+                        }`}
+                      >
+                        <input
+                          type="checkbox"
+                          checked={formData.meetingAvailability.includes(day)}
+                          onChange={() => handleDayToggle(day)}
+                          className="sr-only"
+                        />
+                        <span className="text-sm font-medium">{day}</span>
+                      </label>
+                    ))}
+                  </div>
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    How did you hear about Scouting?
+                    How did you hear about Scouting? (Optional)
                   </label>
                   <select
                     name="hearAbout"
@@ -318,7 +348,7 @@ export default function JoinNow() {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Special Accommodations or Questions
+                    (Optional)
                   </label>
                   <textarea
                     name="comments"
@@ -356,7 +386,7 @@ export default function JoinNow() {
               Your information is secure and will only be shared with your assigned troop coordinator
             </p>
             <p className="text-sm text-gray-600">
-              Questions? Call our 24/7 helpline: <span className="font-semibold text-green-700">1-844-SCOUTS1</span>
+              Questions? Contact us at <span className="font-semibold text-green-700">info@greatvalleydistrict.org</span>
             </p>
           </div>
         </div>

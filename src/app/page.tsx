@@ -204,12 +204,14 @@ export default function Home() {
             </div>
           </div>
           <div className="text-center mt-8">
-            <Link
-              href="/safety-first"
+            <a
+              href="https://www.scouting.org/health-and-safety/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-scouts-bsa-olive hover:text-scouts-bsa-olive-dark font-semibold underline"
             >
               Learn More About Our Safety Measures →
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -285,7 +287,7 @@ export default function Home() {
             <div>
               <h3 className="text-lg font-semibold mb-4">Safety & Support</h3>
               <ul className="space-y-2">
-                <li><Link href="/safety-first" className="hover:text-scouts-bsa-tan transition-colors">Safety First</Link></li>
+                <li><a href="https://www.scouting.org/health-and-safety/" target="_blank" rel="noopener noreferrer" className="hover:text-scouts-bsa-tan transition-colors">Safety First</a></li>
                 <li><span className="text-scouting-red">24/7 Helpline: 1-844-SCOUTS1</span></li>
               </ul>
             </div>
@@ -295,11 +297,7 @@ export default function Home() {
                 <li><Link href="/activities" className="hover:text-cub-scouts-gold transition-colors">Activities</Link></li>
                 <li className="flex items-center">
                   <Icon name="mail" className="mr-2" size="sm" />
-                  info@roanokevalleyscouts.org
-                </li>
-                <li className="flex items-center">
-                  <Icon name="phone" className="mr-2" size="sm" />
-                  (540) 555-SCOUT
+                  info@greatvalleydistrict.org
                 </li>
               </ul>
             </div>

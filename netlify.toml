@@ -45,11 +45,6 @@
   status = 301
 
 [[redirects]]
-  from = "/safety"
-  to = "/safety-first"
-  status = 301
-
-[[redirects]]
   from = "/join"
   to = "/join-now"
   status = 301

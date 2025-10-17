@@ -169,9 +169,7 @@ export default function FAQs() {
               We&apos;re here to help! Contact us directly or visit a local troop meeting to get all your questions answered.
             </p>
             <div className="space-y-2 mb-6">
-              <p><strong>General Information:</strong> info@roanokevalleyscouts.org</p>
-              <p><strong>Phone:</strong> (540) 555-SCOUT</p>
-              <p><strong>24/7 Support:</strong> 1-844-SCOUTS1</p>
+              <p><strong>General Information:</strong> info@greatvalleydistrict.org</p>
             </div>
             <Link href="/join-now" className="bg-emerald-700 text-white py-3 px-8 rounded-lg hover:bg-emerald-800 transition-colors text-lg inline-block">
               Find Your Local Troop
