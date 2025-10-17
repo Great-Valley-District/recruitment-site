@@ -39,8 +39,8 @@ export default function Navigation() {
               className="object-contain"
             />
             <div className="flex flex-col">
-              <span className={`text-lg font-bold ${tw.text(semanticColors.text.heading)}`}>Great Valley District</span>
-              <span className="text-xs text-gray-600">Scouting America</span>
+              <span className="text-lg font-bold text-gray-900">Great Valley District</span>
+              <span className="text-xs text-gray-700">Scouting America</span>
             </div>
           </Link>
 
@@ -72,7 +72,7 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-stone-100 transition-colors"
+            className="md:hidden p-2 rounded-lg hover:bg-stone-100 transition-colors text-gray-900"
             aria-label="Toggle menu"
           >
             <svg
