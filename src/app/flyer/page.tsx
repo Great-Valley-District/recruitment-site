@@ -38,17 +38,10 @@ export default function Flyer() {
 
         {/* Main Content */}
         <div className="p-12 space-y-8">
-          {/* Ages */}
-          <div className="text-center">
-            <p className="text-3xl font-bold text-scouts-bsa-olive">
-              Ages 5-17
-            </p>
-          </div>
-
           {/* Start Here and QR Code */}
           <div className="flex flex-col items-center space-y-6">
             <p className="text-4xl font-bold text-scouts-bsa-olive">
-              Adventure Starts Here
+              Everyone from 5-17, start your adventure here
             </p>
 
             {/* QR Code */}
@@ -64,16 +57,6 @@ export default function Flyer() {
 
             <p className="text-xl font-semibold text-gray-800">
               greatvalleydistrict.org
-            </p>
-          </div>
-
-          {/* Great Valley District */}
-          <div className="text-center pt-4 border-t-2 border-scouts-bsa-200">
-            <p className="text-xl font-bold text-scouts-bsa-olive mb-2">
-              Great Valley District
-            </p>
-            <p className="text-sm text-gray-600">
-              Virginia&apos;s Blue Ridge Mountains
             </p>
           </div>
         </div>
