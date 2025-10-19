@@ -39,10 +39,21 @@ export default function Flyer() {
         {/* Main Content */}
         <div className="p-12 space-y-8">
           {/* Start Here and QR Code */}
-          <div className="flex flex-col items-center space-y-6">
-            <p className="text-4xl font-bold text-scouts-bsa-olive">
-              Everyone from 5-17, start your adventure here
+          <div className="flex flex-col items-center space-y-8 relative">
+            <p className="text-4xl font-bold text-scouts-bsa-olive mr-56 text-right w-full">
+              Everyone ages 5–17:<br></br> Start your adventure here!
             </p>
+
+            {/* Down Arrow - floating to the right */}
+            <div className="absolute top-4 right-0 w-32 h-32 scale-x-[-1.5]">
+              <Image
+                src="/images/curve-arrow.png"
+                alt="Down arrow"
+                width={128}
+                height={256}
+                className="w-full h-full object-contain"
+              />
+            </div>
 
             {/* QR Code */}
             <div className="bg-white p-6 rounded-2xl border-4 border-scouts-bsa-olive shadow-lg">

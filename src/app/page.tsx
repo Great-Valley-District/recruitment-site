@@ -109,8 +109,8 @@ export default function Home() {
                     Real leadership experience that colleges and employers value
                   </p>
                   <ul className="text-left text-gray-600 space-y-1 mb-6">
-                    <li>• High-adventure opportunities unique to our region</li>
                     <li>• Skills for future success</li>
+                    <li>• High-adventure opportunities unique to our region</li>
                     <li>• Eagle Scout achievement (only 6% earn it!)</li>
                   </ul>
                   <span className="inline-block bg-scouts-bsa-olive text-white px-6 py-2 rounded-lg">
